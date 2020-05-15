@@ -25,7 +25,7 @@ LIBS = -lcrypto -lssl
 TGLIB = libdtlssrtp.a
 TEST = dtlssrtp_example
 
-.PHONY: all test clean
+.PHONY: all test clean certs
 all: $(TGLIB)
 
 test: $(TEST)
@@ -45,3 +45,7 @@ $(PCH).gch: $(PCH)
 
 clean:
 	-rm *.o $(TGLIB) $(TEST)
+	-rm *.pem
+certs:
+	openssl req -newkey rsa:2048 -nodes -keyout server-key.pem -x509 -days 3650 -out server-cert.pem
+	openssl req -newkey rsa:2048 -nodes -keyout client-key.pem -x509 -days 3650 -out client-cert.pem
