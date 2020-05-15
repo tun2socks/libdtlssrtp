@@ -1,3 +1,6 @@
+./dtlssrtp_example  -s -b 172.18.0.1 -c server-cert.pem -k server-key.pem -p 5545
+./dtlssrtp_example -c client-cert.pem -k client-key.pem  172.18.0.1 5545
+---------------------------------------------------original-----------------------------------------------------------------------
 Datagram Transport Layer Security (DTLS) Extension to Establish Keys for the Secure Real-time Transport Protocol (SRTP)	(DTLS-SRTP) Reference Implementation
 Richfit Information Technology Co.Ltd.
 
